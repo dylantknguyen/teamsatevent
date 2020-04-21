@@ -1,10 +1,9 @@
 import requests
 import openpyxl
-import re
 
 """ Get Team Data from TBA """
 # url
-year = '2020'
+year = input("Year: ")
 event = input("Event Key: ")
 eventkey = year + event
 teamslink = 'https://www.thebluealliance.com/api/v3/event/' + eventkey + '/teams/simple'
