@@ -9,6 +9,8 @@ After generating your key, go back to the code and find the line with `'X-TBA-Au
 ## Running Program
 To install the program, just download the repo using the "Clone or Download" button. It is likely that you will need to install the python package `openpyxl` using the command `pip install openpyxl` in your command line interface.  Once you do that, just double click `teamsevent.py`. It should create an Excel spreadsheet in the same folder. Open it and check out the numbers.
 
+If you would like print out the team names and numbers instead of just the team numbers, change `# temparray.append(fullteamname)` to `temparray.append(fullteamname)` and `temparray.append(teamnum)` to `# temparray.append(teamnum)`
+
 Note: This requires Python to work. Install it [here](https://www.python.org/downloads/) if you do not have it.
 ## Finding an Event
 To find the event key, go to [The Blue Alliance](https://www.thebluealliance.com/) and enter your desired event into the search bar. The event code will be in brackets.
