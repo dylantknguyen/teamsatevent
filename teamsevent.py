@@ -1,10 +1,6 @@
 import requests
 import openpyxl
 import re
-import argparse
-
-""" Choose Input Type """ 
-ap = argparse.ArgumentParser()
 
 """ Get Team Data from TBA """
 # url
@@ -20,7 +16,7 @@ headers = {
 
 # team list at event
 teams = requests.get(teamslink, headers=headers).json()
-print(teams)
+
 """ Creates Spreadsheet """
 workbook = openpyxl.Workbook()
 sheet = workbook.active
@@ -31,11 +27,9 @@ sheet["A1"] = "Teams at " + eventkey
 for team in teams:
     teamnum = str(team['team_number'])
     teamname = team['nickname']
-    fullteamname = teamnum + ' - ' + teamname
     temparray = []
-    temparray.append(fullteamname)
-    # Uncomment the line below and comment out the line above if you would like to only output team numbers
-    # temparray.append(teamnum)
+    temparray.append(teamnum)
+    temparray.append(teamname)
     sheet.append(temparray)
 
 filename = eventkey + 'teams' + ".xlsx"
